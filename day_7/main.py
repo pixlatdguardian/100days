@@ -46,5 +46,3 @@ while not end_of_game:
         end_of_game = True
         print(f"You guessed {chosen_word} correctly!")
         print("You win.")
-      
- 
