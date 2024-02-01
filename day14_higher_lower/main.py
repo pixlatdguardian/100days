@@ -1,6 +1,7 @@
 import random
 import art
 from game_data import data
+import os
 
 def choose():
     a, b = random.sample(range(len(data)), 2)  # Ensures a and b are different
@@ -11,7 +12,8 @@ def compare(option_a, option_b, guess):
         return data[option_a]['follower_count'] > data[option_b]['follower_count']
     else:  # Assuming guess is "b"
         return data[option_a]['follower_count'] < data[option_b]['follower_count']
-
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
 def game():
     print(art.logo)
     score = 0
@@ -25,8 +27,16 @@ def game():
         correct = compare(option_a, option_b, guess)
         if correct:
             score += 1
+            clear_console()
             print(f"You're right! Current score: {score}.")
             option_a, option_b = option_b, random.randint(0, len(data)-1)  # Move B to A, choose new B
+            
+
+            
+
+# Call this function whenever you want to clear the console
+            
+
         else:
             print(f"Game over. Your score was: {score}.")
             break
