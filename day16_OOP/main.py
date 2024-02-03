@@ -20,3 +20,4 @@ while is_on:
         drink = menu.find_drink(choice)
         if coffee.is_resource_sufficient(drink) and money.make_payment(drink.cost):
             coffee.make_coffee(drink)
+
