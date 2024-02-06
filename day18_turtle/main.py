@@ -12,7 +12,7 @@ colors = [(202, 164, 109), (236, 239, 243), (153, 75, 49), (222, 201, 136), (53,
 
 
 def move():
-    for i in range(10):
+    for _ in range(10):
         tim.color(random.choice(colors))
         tim.up()
         tim.dot(30)
