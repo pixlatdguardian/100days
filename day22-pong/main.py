@@ -17,10 +17,10 @@ ball = Ball()
 scoreboard = Scoreboard()
 
 screen.listen()
-screen.onkey(r_paddle.move_up, "Up")
-screen.onkey(r_paddle.move_down, "Down")
-screen.onkey(l_paddle.move_up, "w")
-screen.onkey(l_paddle.move_down, "s")
+screen.onkeypress(r_paddle.move_up, "Up")
+screen.onkeypress(r_paddle.move_down, "Down")
+screen.onkeypress(l_paddle.move_up, "w")
+screen.onkeypress(l_paddle.move_down, "s")
 
 game_is_on = True
 
@@ -41,9 +41,9 @@ while game_is_on:
         ball.bounce_y()
 
     # Detect collision with paddle
-    if ball.distance(r_paddle) < 50 and ball.xcor() > 325:
+    if ball.distance(r_paddle) < 50 and ball.xcor() > 320:
         ball.bounce_x()
-    elif ball.distance(l_paddle) < 50 and ball.xcor() < -325:
+    elif ball.distance(l_paddle) < 50 and ball.xcor() < -320:
         ball.bounce_x()
 
     # Detect paddle misses
