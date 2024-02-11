@@ -21,6 +21,7 @@ while game_is_on:
     answer_state = screen.textinput(title=f"You have {score.score}/50 states.", prompt="What is the name of a state?")
     answer_state = answer_state.title()
     if answer_state == "Exit":
+        missed_states = [state for state in all_states if state not in correct_guess]
         break
     for index, row in data.iterrows():
         if row['state'] == answer_state:
@@ -31,13 +32,5 @@ while game_is_on:
     if len(correct_guess) == 50:
         game_is_on = False
 
-missed_states = []
-for guess in correct_guess:
-    for state in all_states:
-        if state != guess:
-            missed_states.append(state)
-
 study = pd.DataFrame(missed_states)
 study.to_csv("states_to_learn.csv")
-
-
