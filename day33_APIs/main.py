@@ -1,8 +1,8 @@
 import requests
 from datetime import datetime
 
-MY_LAT = 45.659989  # Your latitude
-MY_LONG = -122.591343  # Your longitude
+MY_LAT = 45.0 # Your latitude
+MY_LONG = -122.0  # Your longitude
 
 
 def iss_overhead():
