@@ -35,5 +35,5 @@ graph_post = {
     "date": formatted_date,
     "quantity": "1",
 }
-
+#send the data
 post_today = requests.post(url=graph1, headers=headers, json=graph_post)

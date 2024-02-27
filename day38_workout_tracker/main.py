@@ -42,5 +42,5 @@ for exercise in data["exercises"]:
             "calories": exercise["nf_calories"]
         }
     }
-
+    #send the data
     post = requests.post(sheet_endpoint, json=sheet_inputs)
